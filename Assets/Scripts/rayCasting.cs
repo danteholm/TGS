@@ -35,15 +35,15 @@ public class rayCasting : MonoBehaviour {
 				//instead we say
 				move = true;
 				
-				player.transform.position = newpos;
+				//player.transform.position = newpos;
 			}
 		}
-		/*if (move){
+		if (move){
 			player.transform.position = Vector3.MoveTowards(transform.position, newpos, Time.deltaTime*speed);
 			if (Vector3.Distance(transform.position, newpos) < 0.1f){
 				move = false;
 			}
-		}*/
+		}
 		
 		//lets me see the raycasting
 		Ray testray = Camera.main.ScreenPointToRay (Input.mousePosition);
