@@ -3,9 +3,9 @@
 using UnityEngine;
 using System.Collections;
 
-public class rayCasting : MonoBehaviour {
+public class Movement : MonoBehaviour {
 	
-	GameObject player;
+	//GameObject player;
 	RaycastHit hit;
 	bool move = false;
 	Vector3 newpos;
@@ -13,7 +13,7 @@ public class rayCasting : MonoBehaviour {
 	public float speed = 5f;
 	
 	void Start () {
-		player = GameObject.Find("Player"); //makes sure that the changes happen to the player
+		//player = GameObject.Find("Player"); //makes sure that the changes happen to the player
 		hit = new RaycastHit();
 	}
 	
@@ -39,7 +39,7 @@ public class rayCasting : MonoBehaviour {
 			}
 		}
 		if (move){
-			player.transform.position = Vector3.MoveTowards(transform.position, newpos, Time.deltaTime*speed);
+			transform.position = Vector3.MoveTowards(transform.position, newpos, Time.deltaTime*speed);
 			if (Vector3.Distance(transform.position, newpos) < 0.1f){
 				move = false;
 			}
