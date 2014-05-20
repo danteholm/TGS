@@ -20,14 +20,14 @@ public class Movement : MonoBehaviour {
 	void Update () {
 		
 		//if i press the left mousebutton a ray is shot from the camera to where my mouse is
-		if (Input.GetMouseButtonDown(0)) {
+		if (Input.GetMouseButton(0)) {
 			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			
 			//if it hits something ...
 			if (Physics.Raycast(ray, out hit, 1000.0f)) {
 				//it stores the new Vecter3 in newpos
 				//also this gets deleted every frame if you don't define it as a global variable
-				newpos = new Vector3(hit.point.x, 5f, hit.point.z);
+				newpos = new Vector3(hit.point.x, 15f, hit.point.z);
 				//and it moves the player to the new position
 				
 				//If this is here it is only executed when you press the mouse button and the raycast hits, you want to set the target here and then execute the lerp or movetowards elsewere
