@@ -4,16 +4,16 @@ using System.Collections;
 public class eventTrigger : MonoBehaviour {
 	public float speed = 15.0f;
 	public float maxY = 2.0f;
-	public float X = 218;
-	public float Z = -220;
+	//public float X = 218;
+	//public float Z = -220;
 	bool move = false;
 	Vector3 newpos;
-	GameObject Event;
+	public GameObject Event;
 
 	// Use this for initialization
 	void Start () {
-		newpos = new Vector3(X,maxY,Z);
-		Event = GameObject.Find ("event1");
+		newpos = new Vector3(Event.transform.position.x,maxY,Event.transform.position.z);
+
 	}
 
 	void OnTriggerEnter (Collider other) {

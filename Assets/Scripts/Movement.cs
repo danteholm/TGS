@@ -11,6 +11,7 @@ public class Movement : MonoBehaviour {
 	Vector3 newpos;
 	//it's a good idea to have the speed as a public global variable so you can edit it in the graphical editor
 	public float speed = 5f;
+	public float Height = 15;
 	
 	void Start () {
 		//player = GameObject.Find("Player"); //makes sure that the changes happen to the player
@@ -21,20 +22,21 @@ public class Movement : MonoBehaviour {
 		
 		//if i press the left mousebutton a ray is shot from the camera to where my mouse is
 		if (Input.GetMouseButton(0)) {
-			Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			//if (hit.transform.gameObject.tag == "Ground"){
+				Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 			
 			//if it hits something ...
-			if (Physics.Raycast(ray, out hit, 1000.0f)) {
+				if (Physics.Raycast(ray, out hit, 1000.0f)) {
 				//it stores the new Vecter3 in newpos
 				//also this gets deleted every frame if you don't define it as a global variable
-				newpos = new Vector3(hit.point.x, 15f, hit.point.z);
+					newpos = new Vector3(hit.point.x, Height, hit.point.z);
 				//and it moves the player to the new position
 				
 				//If this is here it is only executed when you press the mouse button and the raycast hits, you want to set the target here and then execute the lerp or movetowards elsewere
 				//player.transform.position = Vector3.MoveTowards(transform.position, newpos, Time.deltaTime*5);
 				//instead we say
-				move = true;
-				
+					move = true;
+				//}
 				//player.transform.position = newpos;
 			}
 		}
