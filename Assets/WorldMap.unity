@@ -412,7 +412,7 @@ GameObject:
   - 64: {fileID: 1151856466}
   - 23: {fileID: 1151856465}
   m_Layer: 0
-  m_Name: ground
+  m_Name: Ground
   m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -760,7 +760,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1883976274}
-  m_LocalRotation: {x: -1.240962e-08, y: .958854198, z: -.283899009, w: -4.19128483e-08}
+  m_LocalRotation: {x: -6.49644747e-08, y: .917060077, z: -.398749083, w: -1.49408052e-07}
   m_LocalPosition: {x: 0, y: 15, z: 0}
   m_LocalScale: {x: 8.31113243, y: .0247031115, z: 11.1891232}
   m_Children: []
