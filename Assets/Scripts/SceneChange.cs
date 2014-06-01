@@ -10,8 +10,10 @@ public class SceneChange : MonoBehaviour {
 	}
 	
 	void OnTriggerEnter (Collider other) {
-		if (other.CompareTag("Player"))
+		if (other.CompareTag("Player")) {
+			GameManager.setWorldPlayerPosition(other.transform.position);
 			Application.LoadLevel (lvl);
+		}
 	}
 
 }
