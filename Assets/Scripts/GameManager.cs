@@ -2,18 +2,21 @@
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
-	
+
+	//here we save the current instance of the GameManager gameobject
 	static GameManager instance;
 
 	static Vector3 worldMapPlayerPosition = new Vector3();
 
 	void Awake()
 	{
+		//if there is already an instance because we have loaded a scene with another GameManager we destroy the new one and keep the initial one
 		if (instance)
 		{
 			Destroy(gameObject);
 			return;
 		}
+		//otherwise we set instance and make the gameobject not destroyable by loading scenes
 		instance = this;    
 		DontDestroyOnLoad(this); 
 	}
